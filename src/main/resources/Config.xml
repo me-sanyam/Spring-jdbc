@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean class="org.springframework.jdbc.datasource.DriverManagerDataSource" name="dataSourceBean">
+        <property name="driverClassName" value=""/> <!-- Your Driver name -->
+        <property name="url" value=""/> <!-- Your database connection string -->
+        <property name="username" value=""/> <!-- Your username -->
+        <property name="password" value=""/> <!-- Your password -->
+    </bean>
+
+    <bean class="org.springframework.jdbc.core.JdbcTemplate" name="jdbcTemplate">
+        <property name="dataSource" ref="dataSourceBean"/>
+    </bean>
+
+</beans>
